@@ -1,4 +1,4 @@
-# A hello World code using Tensorflow
+# A Hello World code using Tensorflow
 import tensorflow as tf
 
 hello = tf.constant("Hello, TensorFlow!")
