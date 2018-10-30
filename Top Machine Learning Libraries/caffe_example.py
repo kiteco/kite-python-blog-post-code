@@ -1,3 +1,10 @@
+# 1) install caffe using command `sudo apt install caffe-cpu`
+# 2) train network `./examples/mnist/train_lenet.sh`
+# 3) build pycaffe (instructions could be taken here - https://github.com/dungba88/caffe-python3-install/blob/master/install-caffe.md), run make pycaffe after make all
+
+# Remarks on step 3:
+# The Makefile.config file might reference to older version of python (3.5). If your system has Python 3.6, make appropriate changes (3.5 -> 3.6) in Python 3 section.
+# pycaffe module builds will be located in caffe/python directory. To be able to import it you will need to set PYTHONPATH environment variable to caffe/python 
 import caffe
 import numpy as np
 import cv2
