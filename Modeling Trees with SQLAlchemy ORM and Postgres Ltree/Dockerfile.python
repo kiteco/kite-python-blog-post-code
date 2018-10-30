@@ -1,0 +1,8 @@
+FROM python
+RUN apt-get update && apt-get install -y netcat && rm -rf /var/lib/apt/lists/*
+WORKDIR /usr/src/app
+COPY Pipfile Pipfile.lock wait-for.sh ./
+RUN pip install --no-cache-dir pipenv 
+RUN pipenv install --system --deploy
+COPY main.py ./
+CMD [ "python", "./main.py" ]
