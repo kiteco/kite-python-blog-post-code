@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgres:
+    build: 
+      dockerfile: Dockerfile.postgres
+      context: .
+    image: kiteco/postgres-ltree
+    environment:
+      - POSTGRES_PASSWORD=mysecret
+  python:
+    build:
+      dockerfile: Dockerfile.python
+      context: .
+    image: kiteco/python-ltree
+    command: ["./wait-for.sh", "postgres:5432", "--", "python", "main.py"]

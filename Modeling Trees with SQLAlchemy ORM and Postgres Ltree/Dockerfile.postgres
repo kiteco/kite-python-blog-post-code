@@ -1,0 +1,2 @@
+FROM postgres
+COPY ltree.sql /docker-entrypoint-initdb.d
