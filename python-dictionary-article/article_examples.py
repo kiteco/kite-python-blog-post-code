@@ -1,5 +1,3 @@
-from lavalamp import lavalamp
-
 """
 Dictionary Creation
 """
