@@ -1,0 +1,39 @@
+{% extends "template.html.j2" %}
+
+
+{% block body %}
+
+<div class="row">
+  <div class="col-12">
+    <h1>WiFi QR Code Creator</h1>
+  </div>
+  <div class="col-12">
+    <form action="/create" method="post">
+      <div class="form-group">
+        <label for="ssid">SSID</label>
+        <input class="form-control" type="text" name="ssid" id="ssid" placeholder="My WiFi Network Name">
+      </div>
+
+      <div class="form-group">
+        <label for="security">Security Mode</label>
+        <select class="form-control" name="security" id="security">
+          <option value="WPA">WPA</option>
+          <option value="WEP">WEP</option>
+          <option value="">None</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="Protection is good!">
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-lg btn-success" type="submit">Create QR Code!</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
