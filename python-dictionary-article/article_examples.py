@@ -39,8 +39,8 @@ class User(object):
         """ Send an email to our user"""
         pass
 
-    def __repr__():
-        """Logic to properly format data"""
+    # def __repr__():
+    #     """Logic to properly format data"""
 
 
 bill = User('bill @ gmail.com', '123 Acme Dr.', 'secret-password',
@@ -84,11 +84,12 @@ json_response = [{
     "url": "http://wufoo.com"
 }]
 
+# This is just a pattern, but a useful one!
 users = []
 for i in json_response:
     users.append(User(
         name=i['first_name'] + i['last_name'],
-        email = i['email'],
+        email=i['email'],
         url=i['url'],
         # ...
     ))
