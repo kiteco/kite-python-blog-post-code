@@ -1,0 +1,63 @@
+1. Intro
+    1. What the blog will be about
+        1. Writing data to a file
+            1. create new
+            2. append to existing
+            3. other possibilities (not in this post)
+        2. Using the requests library
+            1. Get call to quotes api
+        3. Using a stock API to track stocks
+        4. Writing stock data and quote to file
+        5. formatting for excel or google sheets compatibility.
+    2. Why is this exciting?
+    3. Use cases
+        1. Business data for excel
+        2. show database information without needing a web app
+2. Using the requests library
+    1. How to install
+    2. What is a request?
+        1. Get
+        2. Post
+        3. Briefly describe other request types
+    3. Why the Requests library?
+        1. Philosophy
+    4. How to form a request using the library
+        1. Url
+        2. Type
+        3. Return data
+        4. Life cycle of the request
+    5. Execute a request & use the received data
+        1. Get Request
+3. Stock API
+    1. Use iexfinance API
+        1. link to documentation
+    2. Grab 3 stocks
+        1. List them out by ticker, current price, and volume via iexfinance stock endpoint
+        2. Talk about how we can take this data a step further
+        3. format stock data
+4. Cryptos!
+    1. Use coinbase api
+        1. Provide link to documentation
+        2. Why use coinbase?
+            1. ease of use
+            2. good docs
+        3. How to get started
+            1. simple explanation
+            2. describe requirements
+        4. Grab some coins’ info
+            1. Get buy and sell price for BTC, ETH, and LTC
+            2. Talk about more advance functionality of the API to go further
+            3. Format coin data
+5. Tying all the data together to write to a file
+    1. Creating the files
+        1. stock file
+        2. coin file
+        3. quote file
+        4. accumulative file
+    2. create file and append
+        1. describe the difference between creating and appending functionality
+    3. Explain how writing to a file works
+6. Conclusion
+    1. include more resource references
+    2. reiterate why writing to a file is useful
+    3. end with a good note of understand why it is practical to know how to write to a file
