@@ -1,0 +1,21 @@
+Resources:
+
+https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
+	- Reading and writing to txt file
+	- Open a file
+	- close a file
+
+https://www.w3schools.com/python/python_file_write.asp
+	- Very basic understanding of writing to file
+
+https://www.datacamp.com/community/tutorials/reading-writing-files-python
+	- Reading and writing files in Python tutorial
+
+https://github.com/coinbase/coinbase-python
+	- Crypto currency API access
+
+https://pypi.org/project/googlefinance/
+	- stock prices api through Google for python
+
+ https://theysaidso.com/api/
+	- for quotes
