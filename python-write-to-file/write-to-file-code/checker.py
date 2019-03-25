@@ -9,105 +9,105 @@ import requests
 # limited to 10 requests per hour.
 
 
-# QUOTE_REQ = requests.get('http://quotes.rest/qod.json')
-# QUOTE_RESP = QUOTE_REQ.json()
+# quote_req = requests.get('http://quotes.rest/qod.json')
+# quote_resp = quote_req.json()
 
-# if 'contents' in QUOTE_RESP:
-#     QUOTE = QUOTE_RESP['contents']['quotes'][0]['quote'] \
-#           + " - " + QUOTE_RESP['contents']['quotes'][0]['author']
+# if 'contents' in quote_resp:
+#     quote = quote_resp['contents']['quotes'][0]['quote'] \
+#           + " - " + quote_resp['contents']['quotes'][0]['author']
 # else:
-#     QUOTE = "Quote limit reached - no inspiration this time."
+#     quote = "Quote limit reached - no inspiration this time."
 
-# print(QUOTE)
+# print(quote)
 
 
 
 # Using FavQs API to grab qotd.
 # Typically the quote changes per request.
 
-QUOTE_REQ = requests.get('https://favqs.com/api/qotd')
-QUOTE_RESP = QUOTE_REQ.json()
+quote_req = requests.get('https://favqs.com/api/qotd')
+quote_resp = quote_req.json()
 
-QUOTE = QUOTE_RESP['quote']['body'].replace(',', "&#x2c;") \
-      + ' - ' + QUOTE_RESP['quote']['author']
-print(QUOTE)
+quote = quote_resp['quote']['body'].replace(',', "&#x2c;") \
+      + ' - ' + quote_resp['quote']['author']
+print(quote)
 
 
 # Grab ETH and BTC prices in USD
 
-BTC_PRICE_REQ = requests.get('https://api.coinbase.com/v2/prices/BTC-USD/buy')
-ETH_PRICE_REQ = requests.get('https://api.coinbase.com/v2/prices/ETH-USD/buy')
-LTC_PRICE_REQ = requests.get('https://api.coinbase.com/v2/prices/LTC-USD/buy')
+btc_price_req = requests.get('https://api.coinbase.com/v2/prices/BTC-USD/buy')
+eth_price_req = requests.get('https://api.coinbase.com/v2/prices/ETH-USD/buy')
+ltc_price_req = requests.get('https://api.coinbase.com/v2/prices/LTC-USD/buy')
 
-BTC_PRICE = BTC_PRICE_REQ.json()['data']['amount']
-ETH_PRICE = ETH_PRICE_REQ.json()['data']['amount']
-LTC_PRICE = LTC_PRICE_REQ.json()['data']['amount']
+btc_price = btc_price_req.json()['data']['amount']
+eth_price = eth_price_req.json()['data']['amount']
+ltc_price = ltc_price_req.json()['data']['amount']
 
-print('BTC: $' + BTC_PRICE \
-     + ' & ETH: $' + ETH_PRICE \
-     + ' & LTC: $' + LTC_PRICE)
+print('BTC: $' + btc_price \
+     + ' & ETH: $' + eth_price \
+     + ' & LTC: $' + ltc_price)
 
 # Grab our favorite stocks and format them to String.
 # The get_price() func returns a float
 # This can also be done using a list of stocks.
 # e.g. batch = Stock(['TSLA', 'AAPL', 'GOOGL'])
 
-TSLA = Stock('TSLA')
-AAPL = Stock('AAPL')
-GOOGL = Stock('GOOGL')
+tsla = Stock('TSLA')
+aapl = Stock('AAPL')
+googl = Stock('GOOGL')
 
-TSLA_PRICE = str(TSLA.get_price())
-AAPL_PRICE = str(AAPL.get_price())
-GOOGL_PRICE = str(GOOGL.get_price())
+tsla_price = str(tsla.get_price())
+aapl_price = str(aapl.get_price())
+googl_price = str(googl.get_price())
 
-print('TESLA: $' + TSLA_PRICE \
-     + ' & APPLE: $' + AAPL_PRICE \
-     + ' & GOOGLE: $' + GOOGL_PRICE)
+print('TESLA: $' + tsla_price \
+     + ' & APPLE: $' + aapl_price \
+     + ' & GOOGLE: $' + googl_price)
 
 
 # Get today's date and format it!
 # One for master and the other for individual
 
-DATE = datetime.datetime.today()
+date = datetime.datetime.today()
 
-FORMATTED_FILE_DATE = DATE.strftime('%Y-%m-%d-%H-%M')
-FORMATTED_MASTER_DATE = DATE.strftime('%Y-%m-%d %H:%M:%S')
-FORMATTED_OUTPUT_DATE = DATE.strftime('%Y-%m-%d %H:%M')
+formatted_file_date = date.strftime('%Y-%m-%d-%H-%M')
+formatted_master_date = date.strftime('%Y-%m-%d %H:%M:%S')
+formatted_output_date = date.strftime('%Y-%m-%d %H:%M')
 
 # newline helper and formatted strings
-NL = "\n"
+nl = "\n"
 
-CSV_HEADER = "TICKER,PRICE,DATE,QUOTE" + NL
+csv_header = "TICKER,PRICE,DATE,QUOTE" + nl
 
-FORMATTED_STOCK_STR = "TSLA," + TSLA_PRICE + ',,' + NL \
-                    + "AAPL," + AAPL_PRICE + ',,' + NL \
-                    + "GOOGL," + GOOGL_PRICE + ',,' + NL
+formatted_stock_str = "TSLA," + tsla_price + ',,' + nl \
+                    + "AAPL," + aapl_price + ',,' + nl \
+                    + "GOOGL," + googl_price + ',,' + nl
 
-FORMATTED_CRYPTO_STR = "BTC," + BTC_PRICE + ',,' + NL \
-                     + "ETH," + ETH_PRICE + ',,' + NL \
-                     + "LTC," + LTC_PRICE + ',,' + NL
+formatted_crypto_str = "BTC," + btc_price + ',,' + nl \
+                     + "ETH," + eth_price + ',,' + nl \
+                     + "LTC," + ltc_price + ',,' + nl
 
 
 # Write to the master CSV "a" (append) will create file
 # if not already available. Also, create
 # new files per script run to track individual
 
-MASTER = open("output/master.csv", "a")
+master = open("output/master.csv", "a")
 
 if os.stat("output/master.csv").st_size == 0:
     # only write header if file does not contain any information
-    MASTER.write(CSV_HEADER)
+    master.write(csv_header)
 
-MASTER.write(FORMATTED_STOCK_STR)
-MASTER.write(FORMATTED_CRYPTO_STR)
+master.write(formatted_stock_str)
+master.write(formatted_crypto_str)
 # need a newline because we are appending
-MASTER.write(',,' + FORMATTED_MASTER_DATE + ',' + QUOTE + NL)
-MASTER.close()
+master.write(',,' + formatted_master_date + ',' + quote + nl)
+master.close()
 
-# use FORMATTED_FILE_DATE for kebab casing
-OUTPUT = open("output/individual/stock-crypto-check-" + FORMATTED_FILE_DATE + ".csv", "w")
-OUTPUT.write(CSV_HEADER)
-OUTPUT.write(FORMATTED_STOCK_STR)
-OUTPUT.write(FORMATTED_CRYPTO_STR)
-OUTPUT.write(',,' + FORMATTED_OUTPUT_DATE + ',' + QUOTE)
-OUTPUT.close()
+# use formatted_file_date for kebab casing
+output = open("output/individual/stock-crypto-check-" + formatted_file_date + ".csv", "w")
+output.write(csv_header)
+output.write(formatted_stock_str)
+output.write(formatted_crypto_str)
+output.write(',,' + formatted_output_date + ',' + quote)
+output.close()
