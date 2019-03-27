@@ -1,0 +1,10 @@
+<form action="{{ url_for('editBook',book_id = book.id)}}" method="post">
+    <div class="form-group">
+        <label for="name">Title:</label>
+        <input type="text" class="form-control" name="name" value="{{book.title }}">
+        <button type="submit"> SAVE</button>
+        <a href='{{url_for('showBooks')}}'>
+            <button>Cancel</button>
+        </a>
+    </div>
+</form>
