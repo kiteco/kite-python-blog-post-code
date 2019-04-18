@@ -1,0 +1,4 @@
+-r base.txt  # includes base requirements
+
+gunicorn==19.9.0
+django-heroku==0.3.1

@@ -1,0 +1,5 @@
+-r requirements/prod.txt  # shortcut to prod requirements
+
+# Modifications to prod requirements should go in requirements/prod.txt.
+# This file is for convenience only
+

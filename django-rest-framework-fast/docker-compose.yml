@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  superstoryboard_db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: superstoryboard
+      POSTGRES_USER: superstoryboard
+      POSTGRES_PASSWORD: superstoryboard
+    volumes:
+      - /var/run/superstoryboard-postgres-data:/var/lib/postgresql/data
+
+  superstoryboard:
+    depends_on:
+      - superstoryboard_db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: superstoryboard
+    command: "/ourenv/bin/python manage.py runserver 0.0.0.0:8009"
+    ports:
+    - "8009:8009"
+    restart: always
+    volumes:
+      - .:/code
+    working_dir: /code
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.dev
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - PSQL_HOST=superstoryboard_db
+      - PSQL_NAME=superstoryboard
+      - PSQL_USERNAME=superstoryboard
+      - PSQL_PASSWORD=superstoryboard
