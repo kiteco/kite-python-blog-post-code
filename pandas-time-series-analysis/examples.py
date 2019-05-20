@@ -4,7 +4,7 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-# Settings for pretty nice plots
+# Settings for pretty plots
 plt.style.use('fivethirtyeight')
 plt.show()
 
