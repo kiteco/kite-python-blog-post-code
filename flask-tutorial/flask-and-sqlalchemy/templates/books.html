@@ -1,0 +1,20 @@
+<html>
+<body>
+<h1>Books</h1>
+<a href="{{url_for('newBook')}}">
+    <button>Add Restaurant</button>
+</a>
+<ol>
+    {% for book in books %}
+    <li> {{book.title}} by {{book.author}}</li>
+    <a href="{{url_for('editBook', book_id = book.id )}}">
+        Edit
+    </a>
+    <a href="{{url_for('deleteBook', book_id = book.id )}}" style="margin-left: 10px;">
+        Delete
+    </a>
+    <br> <br>
+    {% endfor %}
+</ol>
+</body>
+</html>

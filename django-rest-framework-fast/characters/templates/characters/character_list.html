@@ -1,0 +1,20 @@
+{% extends 'common/__base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="bs-component">
+                <div class="list-group">
+                    <span class="list-group-item list-group-item-action active">
+                        Characters
+                    </span>
+                    {% for object in object_list %}
+                        <a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">
+                            {{ object.name }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

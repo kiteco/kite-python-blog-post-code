@@ -1,0 +1,16 @@
+{% extends 'common/__base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>{{ character.name}}</h1>
+        <h2>{{character.description}}</h2>
+        <h3>{{ character.name}} is part of the {{ character.team.name|title }}</h3>
+        <p>
+            {% if character.line_modifiers.exists %}
+                "{{ character.get_line }}"
+            {% endif %}
+        </p>
+        <a href="{% url 'characters:delete' pk=character.pk %}" class="btn btn-primary btn-sm">Delete</a>
+        <a href="{% url 'characters:update' pk=character.pk %}" class="btn btn-primary btn-sm">Update</a>
+    </div>
+{% endblock content %}
