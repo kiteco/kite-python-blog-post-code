@@ -1,0 +1,12 @@
+.DS_Store
+.ipynb_checkpoints/
+data/.DS_Store
+data/images	
+data/
+output/
+__pycache__/
+python/old/
+python/show_df.ipynb
+python/ocr_examples.py
+python/read_ocr_response.py
+!/data/
