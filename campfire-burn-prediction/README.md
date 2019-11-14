@@ -3,13 +3,45 @@ This repo contains the code (Jupyter Notebook) for a research project I was invo
 the use ofconvolutional neural networks to predict the burn severity of affect human structures from
 the 2018 Campfire using post-wildfire aerial imagery. 
 
-## Jupyter Notebook 
+We recommend running the code outside of Jupyter notebooks, as you may see performance advantages 
+on your machine (not to mention better tools and environments).
+
+
+## Sample dataset 
+The sample dataset provides a CSV as well as 180 total images from the original data.
+
+-----
+
+## Vanilla Python Instructions
+
+pip install -r requirements.txt
+
+If using venv, activate your venv and run the code in snippets against the python console
+with the article. 
+
+###  Common Errors and Solutions:
+  Try installing the major packages independently, these are:
+  pandas, numpy, matplotlib, tensorflow, sklearn, imblearn, scipy, and imutils
+
+  Also you may need to install
+  opencv-python (in case you get a `no module named cv2` error) and
+  Pillow (in case you get a `Could not import PIL.Image` error
+
+  Try setting up placeholder log files:
+  model_checkpoints/baseline/log.csv and 
+  model_checkpoints/baseline_datagen/log.csv
+
+Note for PyCharm users:
+tensorflow.keras imports return inspection errors even though the code will run fine. 
+The reason for this is a "won't fix" issue with Tensorflow and is beyond the scope of this tutorial.
+
+------
+
+## Jupyter Notebook Instructions
+
 The Jupyter Notebook contains code for building and creating the dataset (images and labels), as
 well as train/test split, model building, training, and test evaluation. The notebook has headers
 for each of these sections. Some extras are included at the bottom of the notebook. 
-
-## Sample dataset 
-The sample dataset provides a CSV as well as one example of each image for each class. 
 
 ## Conda environment 
 Conda can be used to install the necessary packages to run the code in this project. This can be
