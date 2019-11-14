@@ -22,4 +22,4 @@ tensorflow==1.11.0
 termcolor==1.1.0
 Theano==1.0.3
 torch==0.4.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
