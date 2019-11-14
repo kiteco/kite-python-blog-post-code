@@ -14,7 +14,11 @@ The sample dataset provides a CSV as well as 180 total images from the original 
 
 ## Vanilla Python Instructions
 
+Set up your project normally and install dependencies with:
+
+```bash
 pip install -r requirements.txt
+```
 
 If using venv, activate your venv and run the code in snippets against the python console
 with the article. 
