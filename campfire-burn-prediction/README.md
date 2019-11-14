@@ -1,5 +1,7 @@
 # Campfire Burn Severity Prediction
-This repo contains the code (Jupyter Notebook) for the use of convolutional neural networks to predict the burn severity of affected human structures from the 2018 Campfire using post-wildfire aerial imagery. 
+This repo contains the code (Jupyter Notebook) for a research project I was involed in which studied
+the use ofconvolutional neural networks to predict the burn severity of affect human structures from
+the 2018 Campfire using post-wildfire aerial imagery. 
 
 ## Jupyter Notebook 
 The Jupyter Notebook contains code for building and creating the dataset (images and labels), as
