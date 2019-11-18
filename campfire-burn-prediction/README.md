@@ -18,7 +18,10 @@ Set up your project normally and install dependencies with:
 
 ```bash
 pip install -r requirements.txt
+pip install git+https://github.com/gustaver/imbalanced-learn.git
 ```
+You can run most of the code with packages from PyPI, but the second instruction will allow
+you to run the forked version of imblearn.
 
 If using venv, activate your venv and run the code in snippets against the python console
 with the article. 
