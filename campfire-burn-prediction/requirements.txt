@@ -76,7 +76,7 @@ Send2Trash==1.5.0
 six==1.13.0
 sklearn==0.0
 tensorboard==2.0.1
-tensorflow==2.0.0
+tensorflow==2.3.1
 tensorflow-estimator==2.0.1
 termcolor==1.1.0
 terminado==0.8.3
